@@ -30,14 +30,22 @@ Here, let's break into small parts
 ```
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalBuy()
 
-// assertEquals(17790000, stockService.calculateTotalBuy(inputData));
+// assertEquals(17780000, stockService.calculateTotalBuy(inputData));
 
+return inputData.stream()
+                .filter(s -> s.getSubscriptionType().equals(SubscriptionType.BUY))
+                .mapToInt(s -> s.getPrice() * s.getNumberOfStocks())
+                .sum();
+/***************************/
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalSell()
 
+/***************************/
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalFee()
 
+/***************************/
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalTax()
 
+/***************************/
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalFeeAndTax()
 ```
 
