@@ -80,6 +80,12 @@ givenListOfSubscriptions_whenCalculate_thenCalculateTotalTax()
 
 /***************************/
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalFeeAndTax()
+
+// assertEquals(88795, stockService.calculateTotalBrokerFeeAndTax(inputData));
+
+    public int calculateTotalBrokerFeeAndTax(List<SubscriptionData> inputData) {
+        return calculateTotalBrokerFee(inputData) + calculateTotalTax(inputData);
+    }
 ```
 
 Testing data for US02

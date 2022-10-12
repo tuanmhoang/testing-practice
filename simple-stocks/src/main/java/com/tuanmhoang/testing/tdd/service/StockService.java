@@ -30,10 +30,10 @@ public class StockService {
     }
 
     public int calculateTotalTax(List<SubscriptionData> inputData) {
-        return (int) (calculateTotalBasedOnSubscriptionType(inputData,SubscriptionType.SELL)*TAX_FEE);
+        return (int) (calculateTotalBasedOnSubscriptionType(inputData, SubscriptionType.SELL) * TAX_FEE);
     }
 
     public int calculateTotalBrokerFeeAndTax(List<SubscriptionData> inputData) {
-        return 0;
+        return calculateTotalBrokerFee(inputData) + calculateTotalTax(inputData);
     }
 }
