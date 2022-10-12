@@ -21,7 +21,10 @@ public class StockService {
     }
 
     public int calculateTotalSell(List<SubscriptionData> inputData) {
-        return 0;
+        return inputData.stream()
+                .filter(s -> s.getSubscriptionType().equals(SubscriptionType.SELL))
+                .mapToInt(s -> s.getPrice() * s.getNumberOfStocks())
+                .sum();
     }
 
 
