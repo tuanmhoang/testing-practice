@@ -54,4 +54,5 @@ public class StockServiceTest {
         assertEquals(88795, stockService.calculateTotalBrokerFeeAndTax(inputData));
     }
 
+
 }
