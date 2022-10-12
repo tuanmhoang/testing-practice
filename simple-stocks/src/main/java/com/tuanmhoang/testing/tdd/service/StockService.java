@@ -26,4 +26,8 @@ public class StockService {
                 .mapToInt(s -> (int) (s.getPrice() * s.getNumberOfStocks() * BROKER_FEE))
                 .sum();
     }
+
+    public int calculateTotalTax(List<SubscriptionData> inputData) {
+        return 0;
+    }
 }
