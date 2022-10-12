@@ -72,6 +72,12 @@ givenListOfSubscriptions_whenCalculate_thenCalculateTotalBrokerFee()
 /***************************/
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalTax()
 
+//  assertEquals(24850,stockService.calculateTotalTax(inputData));
+
+    public int calculateTotalTax(List<SubscriptionData> inputData) {
+        return (int) (calculateTotalBasedOnSubscriptionType(inputData,SubscriptionType.SELL)*TAX_FEE);
+    }
+
 /***************************/
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalFeeAndTax()
 ```

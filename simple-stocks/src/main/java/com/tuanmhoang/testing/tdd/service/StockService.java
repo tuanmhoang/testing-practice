@@ -9,6 +9,8 @@ public class StockService {
 
     private static final double BROKER_FEE = 0.0015;
 
+    private static final double TAX_FEE = 0.001;
+
     public int calculateTotalPrice(int price, int numberOfStocks) {
         return price * numberOfStocks;
     }
@@ -28,6 +30,6 @@ public class StockService {
     }
 
     public int calculateTotalTax(List<SubscriptionData> inputData) {
-        return 0;
+        return (int) (calculateTotalBasedOnSubscriptionType(inputData,SubscriptionType.SELL)*TAX_FEE);
     }
 }
