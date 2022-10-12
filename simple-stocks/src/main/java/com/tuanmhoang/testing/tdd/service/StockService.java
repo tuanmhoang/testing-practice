@@ -20,4 +20,7 @@ public class StockService {
     }
 
 
+    public int calculateTotalFee(List<SubscriptionData> inputData) {
+        return 0;
+    }
 }

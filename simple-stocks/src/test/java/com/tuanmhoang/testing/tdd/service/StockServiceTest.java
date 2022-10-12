@@ -39,4 +39,9 @@ public class StockServiceTest {
         assertEquals(24850000, stockService.calculateTotalBasedOnSubscriptionType(inputData,SubscriptionType.SELL));
     }
 
+    @Test
+    public void givenListOfSubscriptions_whenCalculate_thenCalculateTotalFee(){
+        assertEquals(63945, stockService.calculateTotalFee(inputData));
+    }
+
 }
