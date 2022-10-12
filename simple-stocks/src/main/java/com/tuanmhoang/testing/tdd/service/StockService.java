@@ -12,17 +12,9 @@ public class StockService {
     public int calculateTotalPrice(int price, int numberOfStocks) {
         return price * numberOfStocks;
     }
-
-    public int calculateTotalBuy(List<SubscriptionData> inputData) {
+    public int calculateTotalBasedOnSubscriptionType(List<SubscriptionData> inputData, SubscriptionType type) {
         return inputData.stream()
-                .filter(s -> s.getSubscriptionType().equals(SubscriptionType.BUY))
-                .mapToInt(s -> s.getPrice() * s.getNumberOfStocks())
-                .sum();
-    }
-
-    public int calculateTotalSell(List<SubscriptionData> inputData) {
-        return inputData.stream()
-                .filter(s -> s.getSubscriptionType().equals(SubscriptionType.SELL))
+                .filter(s -> s.getSubscriptionType().equals(type))
                 .mapToInt(s -> s.getPrice() * s.getNumberOfStocks())
                 .sum();
     }

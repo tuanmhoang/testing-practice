@@ -27,7 +27,7 @@ public class StockServiceTest {
                 SubscriptionData.builder().price(13500).numberOfStocks(1000).subscriptionType(SubscriptionType.SELL).build()
         );
         // 12700*1400
-        assertEquals(17780000, stockService.calculateTotalBuy(inputData));
+        assertEquals(17780000, stockService.calculateTotalBasedOnSubscriptionType(inputData,SubscriptionType.BUY));
     }
 
     @Test
@@ -38,6 +38,6 @@ public class StockServiceTest {
                 SubscriptionData.builder().price(13500).numberOfStocks(1000).subscriptionType(SubscriptionType.SELL).build()
         );
         // 11350*1000+13500*1000
-        assertEquals(24850000, stockService.calculateTotalSell(inputData));
+        assertEquals(24850000, stockService.calculateTotalBasedOnSubscriptionType(inputData,SubscriptionType.SELL));
     }
 }

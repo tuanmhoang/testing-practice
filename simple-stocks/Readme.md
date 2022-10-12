@@ -32,13 +32,32 @@ givenListOfSubscriptions_whenCalculate_thenCalculateTotalBuy()
 
 // assertEquals(17780000, stockService.calculateTotalBuy(inputData));
 
-return inputData.stream()
+    public int calculateTotalBuy(List<SubscriptionData> inputData) {
+        return inputData.stream()
                 .filter(s -> s.getSubscriptionType().equals(SubscriptionType.BUY))
                 .mapToInt(s -> s.getPrice() * s.getNumberOfStocks())
                 .sum();
+    }
 /***************************/
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalSell()
 
+// assertEquals(24850000, stockService.calculateTotalSell(inputData));
+
+    public int calculateTotalSell(List<SubscriptionData> inputData) {
+        return inputData.stream()
+                .filter(s -> s.getSubscriptionType().equals(SubscriptionType.SELL))
+                .mapToInt(s -> s.getPrice() * s.getNumberOfStocks())
+                .sum();
+    }
+
+// BLUE
+    public int calculateTotalBasedOnSubscriptionType(List<SubscriptionData> inputData, SubscriptionType type) {
+        return inputData.stream()
+                .filter(s -> s.getSubscriptionType().equals(type))
+                .mapToInt(s -> s.getPrice() * s.getNumberOfStocks())
+                .sum();
+    }          
+                
 /***************************/
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalFee()
 
