@@ -30,6 +30,8 @@ Here, let's break into small parts
 ```
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalBuy()
 
+// assertEquals(17790000, stockService.calculateTotalBuy(inputData));
+
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalSell()
 
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalFee()
@@ -37,6 +39,17 @@ givenListOfSubscriptions_whenCalculate_thenCalculateTotalFee()
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalTax()
 
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalFeeAndTax()
+```
+
+Testing data for US02
+
+```
+        List<SubscriptionData> inputData = Arrays.asList(
+                SubscriptionData.builder().price(12700).numberOfStocks(1400).subscriptionType(SubscriptionType.BUY).build(),
+                SubscriptionData.builder().price(11350).numberOfStocks(1000).subscriptionType(SubscriptionType.SELL).build(),
+                SubscriptionData.builder().price(13500).numberOfStocks(1000).subscriptionType(SubscriptionType.BUY).build()
+
+        );
 ```
 
 Then we can populate the result to report and display
