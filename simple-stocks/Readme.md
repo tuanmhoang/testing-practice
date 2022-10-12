@@ -59,7 +59,15 @@ givenListOfSubscriptions_whenCalculate_thenCalculateTotalSell()
     }          
                 
 /***************************/
-givenListOfSubscriptions_whenCalculate_thenCalculateTotalFee()
+givenListOfSubscriptions_whenCalculate_thenCalculateTotalBrokerFee()
+
+// assertEquals(63945, stockService.calculateTotalBrokerFee(inputData));
+
+    public int calculateTotalBrokerFee(List<SubscriptionData> inputData) {
+        return inputData.stream()
+                .mapToInt(s -> (int) (s.getPrice() * s.getNumberOfStocks() * BROKER_FEE))
+                .sum();
+    }
 
 /***************************/
 givenListOfSubscriptions_whenCalculate_thenCalculateTotalTax()

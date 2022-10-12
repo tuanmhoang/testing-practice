@@ -40,8 +40,8 @@ public class StockServiceTest {
     }
 
     @Test
-    public void givenListOfSubscriptions_whenCalculate_thenCalculateTotalFee(){
-        assertEquals(63945, stockService.calculateTotalFee(inputData));
+    public void givenListOfSubscriptions_whenCalculate_thenCalculateTotalBrokerFee(){
+        assertEquals(63945, stockService.calculateTotalBrokerFee(inputData));
     }
 
 }
