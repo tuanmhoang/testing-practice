@@ -49,4 +49,9 @@ public class StockServiceTest {
         assertEquals(24850,stockService.calculateTotalTax(inputData));
     }
 
+    @Test
+    public void givenListOfSubscriptions_whenCalculate_thenCalculateTotalFeeAndTax(){
+        assertEquals(88795, stockService.calculateTotalBrokerFeeAndTax(inputData));
+    }
+
 }
