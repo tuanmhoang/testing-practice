@@ -29,4 +29,15 @@ public class StockServiceTest {
         // 12700*1400
         assertEquals(17780000, stockService.calculateTotalBuy(inputData));
     }
+
+    @Test
+    public  void givenListOfSubscriptions_whenCalculate_thenCalculateTotalSell(){
+        List<SubscriptionData> inputData = Arrays.asList(
+                SubscriptionData.builder().price(12700).numberOfStocks(1400).subscriptionType(SubscriptionType.BUY).build(),
+                SubscriptionData.builder().price(11350).numberOfStocks(1000).subscriptionType(SubscriptionType.SELL).build(),
+                SubscriptionData.builder().price(13500).numberOfStocks(1000).subscriptionType(SubscriptionType.SELL).build()
+        );
+        // 11350*1000+13500*1000
+        assertEquals(24850000, stockService.calculateTotalSell(inputData));
+    }
 }

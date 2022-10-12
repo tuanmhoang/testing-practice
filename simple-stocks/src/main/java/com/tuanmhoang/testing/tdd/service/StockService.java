@@ -19,4 +19,10 @@ public class StockService {
                 .mapToInt(s -> s.getPrice() * s.getNumberOfStocks())
                 .sum();
     }
+
+    public int calculateTotalSell(List<SubscriptionData> inputData) {
+        return 0;
+    }
+
+
 }
